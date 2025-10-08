@@ -1,0 +1,169 @@
+{
+  "interest_rates": [
+    {
+      "id": "BASE_RATE_001",
+      "category": "기준금리",
+      "title": "한국은행 기준금리",
+      "description": "한국은행이 설정하는 기준금리로 모든 대출금리의 기준이 됩니다.",
+      "current_rate": 3.50,
+      "trend": "유지",
+      "last_updated": "2024-10-01",
+      "impact": "모든 대출상품의 기준이 되는 금리"
+    },
+    {
+      "id": "PRIME_RATE_001",
+      "category": "우대금리",
+      "title": "신용대출 우대금리",
+      "description": "신용등급 우수고객에게 적용되는 우대금리입니다.",
+      "rate_range": {
+        "min": 2.8,
+        "max": 4.5
+      },
+      "conditions": [
+        "신용점수 800점 이상",
+        "연소득 5천만원 이상",
+        "주거래은행 3년 이상 거래실적"
+      ],
+      "description_detail": "최고 신용등급 고객을 위한 특별 우대금리"
+    },
+    {
+      "id": "MORTGAGE_RATE_001",
+      "category": "담보대출금리",
+      "title": "주택담보대출 기준금리",
+      "description": "주택을 담보로 하는 대출의 기준금리입니다.",
+      "rate_range": {
+        "min": 2.5,
+        "max": 8.5
+      },
+      "ltv_impact": {
+        "ltv_30": -0.5,
+        "ltv_50": 0.0,
+        "ltv_70": 0.3,
+        "ltv_80": 0.8
+      },
+      "description_detail": "LTV 비율에 따라 금리가 차등 적용됩니다."
+    },
+    {
+      "id": "VARIABLE_RATE_001",
+      "category": "변동금리",
+      "title": "변동금리 정책",
+      "description": "시장금리 변동에 따라 조정되는 변동금리 정책입니다.",
+      "base_rate": "CD금리 + 가산금리",
+      "adjustment_cycle": "3개월",
+      "rate_range": {
+        "min": 3.2,
+        "max": 15.8
+      },
+      "advantages": [
+        "금리 하락 시 이익",
+        "초기 금리 낮음",
+        "중도상환 수수료 면제"
+      ],
+      "risks": [
+        "금리 상승 위험",
+        "상환액 변동"
+      ]
+    },
+    {
+      "id": "FIXED_RATE_001",
+      "category": "고정금리",
+      "title": "고정금리 정책",
+      "description": "대출기간 동안 금리가 고정되는 고정금리 정책입니다.",
+      "rate_range": {
+        "min": 4.2,
+        "max": 16.5
+      },
+      "fixed_periods": [
+        {"period": "3년", "rate_add": 0.0},
+        {"period": "5년", "rate_add": 0.2},
+        {"period": "10년", "rate_add": 0.5},
+        {"period": "전기간", "rate_add": 0.8}
+      ],
+      "advantages": [
+        "상환액 예측 가능",
+        "금리 상승 위험 차단",
+        "장기 재정계획 수립 용이"
+      ]
+    },
+    {
+      "id": "PENALTY_RATE_001",
+      "category": "연체금리",
+      "title": "연체 시 적용금리",
+      "description": "대출원금이나 이자 연체 시 적용되는 가산금리입니다.",
+      "penalty_rates": {
+        "신용대출": 3.0,
+        "담보대출": 2.0,
+        "신용카드": 6.0
+      },
+      "grace_period": 5,
+      "maximum_rate": 20.0,
+      "description_detail": "연체 발생 시 약정금리에 연체가산금리가 추가됩니다."
+    },
+    {
+      "id": "PROMOTION_RATE_001",
+      "category": "특별금리",
+      "title": "신규고객 특별금리",
+      "description": "신규고객 유치를 위한 한시적 특별금리입니다.",
+      "promotion_period": "6개월",
+      "discount_rate": 1.5,
+      "conditions": [
+        "신규고객",
+        "대출금액 3천만원 이상",
+        "자동이체 가입"
+      ],
+      "after_promotion": "일반 금리로 전환",
+      "description_detail": "프로모션 기간 후 일반금리 적용"
+    },
+    {
+      "id": "LOYALTY_RATE_001",
+      "category": "충성고객금리",
+      "title": "VIP 고객 우대금리",
+      "description": "장기간 우수 거래실적을 보유한 VIP 고객을 위한 우대금리입니다.",
+      "vip_levels": {
+        "골드": 0.3,
+        "플래티넘": 0.5,
+        "다이아몬드": 0.8
+      },
+      "vip_conditions": [
+        "5년 이상 거래",
+        "연평균 잔액 1억원 이상",
+        "연체이력 없음"
+      ],
+      "description_detail": "VIP 등급에 따라 차등 할인 적용"
+    },
+    {
+      "id": "YOUNG_RATE_001",
+      "category": "청년우대금리",
+      "title": "청년층 특별우대금리",
+      "description": "만 34세 이하 청년층을 위한 특별 우대금리입니다.",
+      "age_limit": 34,
+      "discount_rate": 1.0,
+      "max_amount": 50000000,
+      "conditions": [
+        "만 19세 이상 34세 이하",
+        "재직기간 6개월 이상",
+        "신용점수 600점 이상"
+      ],
+      "description_detail": "청년층의 사회진출을 지원하는 우대금리"
+    },
+    {
+      "id": "EMPLOYEE_RATE_001",
+      "category": "직군별우대금리",
+      "title": "공무원/교사 우대금리",
+      "description": "공무원, 교사 등 안정적 직업군을 위한 우대금리입니다.",
+      "target_jobs": [
+        "공무원",
+        "교사",
+        "공기업 직원",
+        "의료진"
+      ],
+      "discount_rates": {
+        "공무원": 0.8,
+        "교사": 0.7,
+        "공기업": 0.6,
+        "의료진": 0.5
+      },
+      "description_detail": "직업의 안정성을 고려한 차등 우대금리 적용"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "risk_factors": [
+    {
+      "id": "INCOME_RISK_001",
+      "category": "소득 리스크",
+      "title": "소득 불안정성",
+      "description": "소득의 지속성과 안정성에 대한 리스크 요인",
+      "risk_level": "높음",
+      "impact_score": 85,
+      "factors": [
+        "프리랜서 소득",
+        "계절성 사업",
+        "신규 사업자",
+        "커미션 중심 소득"
+      ],
+      "mitigation": "소득증빙 강화, 보증인 요구, 한도 제한"
+    },
+    {
+      "id": "INCOME_RISK_002",
+      "category": "소득 리스크",
+      "title": "소득 감소 위험",
+      "description": "경기침체나 개인사정으로 인한 소득 감소 위험",
+      "risk_level": "중간",
+      "impact_score": 70,
+      "factors": [
+        "경기민감 업종",
+        "중소기업 근무",
+        "고령 근로자",
+        "단기 계약직"
+      ],
+      "mitigation": "업종별 할증, 연령별 한도 조정"
+    },
+    {
+      "id": "CREDIT_RISK_001",
+      "category": "신용 리스크",
+      "title": "신용점수 하락",
+      "description": "신용점수 급격한 하락으로 인한 리스크",
+      "risk_level": "높음",
+      "impact_score": 90,
+      "factors": [
+        "연체 이력 발생",
+        "다중채무",
+        "신용카드 한도 초과",
+        "대출 집중"
+      ],
+      "mitigation": "정기 신용점수 모니터링, 조기 경보 시스템"
+    },
+    {
+      "id": "CREDIT_RISK_002",
+      "category": "신용 리스크",
+      "title": "과도한 부채비율",
+      "description": "DTI, DSR 비율이 과도하여 발생하는 리스크",
+      "risk_level": "높음",
+      "impact_score": 95,
+      "factors": [
+        "DTI 40% 초과",
+        "DSR 60% 초과",
+        "단기간 대출 급증",
+        "생활비 대출 증가"
+      ],
+      "mitigation": "부채비율 제한, 상환계획 수립 의무화"
+    },
+    {
+      "id": "MARKET_RISK_001",
+      "category": "시장 리스크",
+      "title": "금리 상승 위험",
+      "description": "시장금리 상승으로 인한 변동금리 대출의 리스크",
+      "risk_level": "중간",
+      "impact_score": 75,
+      "factors": [
+        "기준금리 상승",
+        "변동금리 대출 비중 높음",
+        "장기 대출",
+        "금리 상승 예상"
+      ],
+      "mitigation": "고정금리 전환 옵션, 금리 상한 설정"
+    },
+    {
+      "id": "MARKET_RISK_002",
+      "category": "시장 리스크",
+      "title": "부동산 가격 하락",
+      "description": "담보 부동산 가격 하락으로 인한 LTV 상승 리스크",
+      "risk_level": "중간",
+      "impact_score": 80,
+      "factors": [
+        "부동산 경기 침체",
+        "지역별 가격 하락",
+        "정책 변화",
+        "공급 과잉"
+      ],
+      "mitigation": "보수적 LTV 설정, 정기 감정평가"
+    },
+    {
+      "id": "EMPLOYMENT_RISK_001",
+      "category": "고용 리스크",
+      "title": "실업 위험",
+      "description": "실직으로 인한 소득 중단 리스크",
+      "risk_level": "높음",
+      "impact_score": 95,
+      "factors": [
+        "구조조정 대상 업종",
+        "중소기업 근무",
+        "비정규직",
+        "고령 근로자"
+      ],
+      "mitigation": "신용보험 가입, 유예기간 설정"
+    },
+    {
+      "id": "EMPLOYMENT_RISK_002",
+      "category": "고용 리스크",
+      "title": "업종별 리스크",
+      "description": "특정 업종의 경기민감성으로 인한 리스크",
+      "risk_level": "중간",
+      "impact_score": 70,
+      "factors": [
+        "건설업",
+        "숙박/음식업",
+        "소매업",
+        "문화/예술업"
+      ],
+      "mitigation": "업종별 차등 금리, 추가 담보 요구"
+    },
+    {
+      "id": "HEALTH_RISK_001",
+      "category": "건강 리스크",
+      "title": "질병/사고 위험",
+      "description": "질병이나 사고로 인한 소득능력 상실 리스크",
+      "risk_level": "중간",
+      "impact_score": 75,
+      "factors": [
+        "고위험 직업",
+        "고령",
+        "기존 질병력",
+        "위험 취미활동"
+      ],
+      "mitigation": "생명보험 가입 의무화, 건강검진 요구"
+    },
+    {
+      "id": "LEGAL_RISK_001",
+      "category": "법적 리스크",
+      "title": "법적 분쟁 위험",
+      "description": "법적 분쟁으로 인한 자산 동결이나 압류 위험",
+      "risk_level": "낮음",
+      "impact_score": 60,
+      "factors": [
+        "소송 진행 중",
+        "세금 체납",
+        "가압류 등기",
+        "형사사건 연루"
+      ],
+      "mitigation": "법적 상태 확인, 추가 담보 요구"
+    },
+    {
+      "id": "FAMILY_RISK_001",
+      "category": "가족 리스크",
+      "title": "가계 변동 위험",
+      "description": "가족 구성원 변화로 인한 가계 부담 증가 위험",
+      "risk_level": "중간",
+      "impact_score": 65,
+      "factors": [
+        "자녀 교육비 증가",
+        "부모 부양 의무",
+        "이혼/별거",
+        "가족 질병"
+      ],
+      "mitigation": "가족 상황 정기 확인, 보험 가입 권유"
+    },
+    {
+      "id": "PROPERTY_RISK_001",
+      "category": "담보 리스크",
+      "title": "담보물 손상 위험",
+      "description": "담보 부동산의 물리적 손상으로 인한 가치 하락 위험",
+      "risk_level": "낮음",
+      "impact_score": 55,
+      "factors": [
+        "자연재해",
+        "화재/폭발",
+        "노후화",
+        "주변 환경 악화"
+      ],
+      "mitigation": "화재보험 가입 의무, 정기 점검"
+    },
+    {
+      "id": "PROPERTY_RISK_002",
+      "category": "담보 리스크",
+      "title": "담보물 유동성 위험",
+      "description": "담보물 처분 시 유동성 부족으로 인한 손실 위험",
+      "risk_level": "중간",
+      "impact_score": 70,
+      "factors": [
+        "지방 소재",
+        "특수 용도 건물",
+        "대형 부동산",
+        "권리 관계 복잡"
+      ],
+      "mitigation": "유동성 높은 담보 선호, LTV 보수 설정"
+    },
+    {
+      "id": "FRAUD_RISK_001",
+      "category": "사기 리스크",
+      "title": "서류 위조 위험",
+      "description": "소득증명서나 신분증 등 서류 위조로 인한 리스크",
+      "risk_level": "중간",
+      "impact_score": 85,
+      "factors": [
+        "온라인 신청",
+        "고액 대출",
+        "서류 검증 부족",
+        "신규 고객"
+      ],
+      "mitigation": "서류 진위 확인 강화, 대면 상담 의무화"
+    },
+    {
+      "id": "FRAUD_RISK_002",
+      "category": "사기 리스크",
+      "title": "신원 도용 위험",
+      "description": "타인의 신원을 도용한 대출 신청 위험",
+      "risk_level": "중간",
+      "impact_score": 90,
+      "factors": [
+        "개인정보 유출",
+        "온라인 신청",
+        "본인 확인 절차 미흡",
+        "대리인 신청"
+      ],
+      "mitigation": "다단계 본인인증, 생체인증 도입"
+    },
+    {
+      "id": "ECONOMIC_RISK_001",
+      "category": "경제 리스크",
+      "title": "경기침체 위험",
+      "description": "전반적인 경기침체로 인한 대출 리스크 증가",
+      "risk_level": "중간",
+      "impact_score": 80,
+      "factors": [
+        "GDP 성장률 둔화",
+        "실업률 증가",
+        "소비 위축",
+        "기업 부도 증가"
+      ],
+      "mitigation": "경기 지표 모니터링, 신규 대출 축소"
+    },
+    {
+      "id": "POLICY_RISK_001",
+      "category": "정책 리스크",
+      "title": "정부 정책 변화",
+      "description": "부동산 정책이나 금융정책 변화로 인한 리스크",
+      "risk_level": "중간",
+      "impact_score": 75,
+      "factors": [
+        "LTV/DTI 규제 강화",
+        "세제 변화",
+        "금리 정책 변화",
+        "대출 규제 강화"
+      ],
+      "mitigation": "정책 동향 모니터링, 선제적 대응"
+    },
+    {
+      "id": "TECHNOLOGY_RISK_001",
+      "category": "기술 리스크",
+      "title": "사이버 보안 위험",
+      "description": "해킹이나 사이버 공격으로 인한 정보 유출 위험",
+      "risk_level": "중간",
+      "impact_score": 70,
+      "factors": [
+        "개인정보 해킹",
+        "금융 시스템 침입",
+        "피싱 사기",
+        "악성코드 감염"
+      ],
+      "mitigation": "보안 시스템 강화, 고객 교육 실시"
+    },
+    {
+      "id": "OPERATIONAL_RISK_001",
+      "category": "운영 리스크",
+      "title": "내부 관리 위험",
+      "description": "은행 내부의 운영 미스나 직원 실수로 인한 리스크",
+      "risk_level": "낮음",
+      "impact_score": 60,
+      "factors": [
+        "심사 오류",
+        "시스템 장애",
+        "직원 부정행위",
+        "프로세스 미준수"
+      ],
+      "mitigation": "내부 통제 강화, 정기 감사 실시"
+    },
+    {
+      "id": "CONCENTRATION_RISK_001",
+      "category": "집중 리스크",
+      "title": "대출 집중 위험",
+      "description": "특정 지역이나 업종에 대출이 집중되어 발생하는 리스크",
+      "risk_level": "중간",
+      "impact_score": 75,
+      "factors": [
+        "지역별 집중",
+        "업종별 집중",
+        "대형 고객 집중",
+        "상품별 집중"
+      ],
+      "mitigation": "포트폴리오 분산, 한도 관리 강화"
+    },
+    {
+      "id": "LIQUIDITY_RISK_001",
+      "category": "유동성 리스크",
+      "title": "자금 조달 위험",
+      "description": "은행의 자금 조달 어려움으로 인한 대출 공급 축소 위험",
+      "risk_level": "낮음",
+      "impact_score": 65,
+      "factors": [
+        "예금 이탈",
+        "자금 시장 경색",
+        "신용등급 하락",
+        "규제 강화"
+      ],
+      "mitigation": "자금 조달 다변화, 유동성 비율 관리"
+    },
+    {
+      "id": "REPUTATION_RISK_001",
+      "category": "평판 리스크",
+      "title": "은행 신뢰도 하락",
+      "description": "은행의 평판 악화로 인한 고객 이탈과 사업 위험",
+      "risk_level": "중간",
+      "impact_score": 70,
+      "factors": [
+        "금융사고 발생",
+        "불완전 판매",
+        "고객 불만 증가",
+        "언론 보도"
+      ],
+      "mitigation": "고객 만족도 관리, 투명한 업무 처리"
+    },
+    {
+      "id": "REGULATORY_RISK_001",
+      "category": "규제 리스크",
+      "title": "금융감독 강화",
+      "description": "금융감독원의 규제 강화로 인한 영업 제약 위험",
+      "risk_level": "중간",
+      "impact_score": 75,
+      "factors": [
+        "검사 강화",
+        "제재 증가",
+        "신규 규제 도입",
+        "보고 의무 강화"
+      ],
+      "mitigation": "컴플라이언스 체계 강화, 법규 준수"
+    },
+    {
+      "id": "COMPETITIVE_RISK_001",
+      "category": "경쟁 리스크",
+      "title": "시장 경쟁 심화",
+      "description": "금융기관 간 경쟁 심화로 인한 수익성 악화 위험",
+      "risk_level": "중간",
+      "impact_score": 65,
+      "factors": [
+        "핀테크 업체 참입",
+        "비은행권 확대",
+        "마진 축소",
+        "고객 쟁탈전"
+      ],
+      "mitigation": "차별화된 상품 개발, 고객 서비스 향상"
+    }
+  ]
+}

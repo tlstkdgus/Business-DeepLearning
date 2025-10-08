@@ -1,0 +1,33 @@
+# 대출 상담 RAG 챗봇 설정 파일
+# API 키는 실제 값으로 변경해주세요
+
+gemini:
+  api_key: "YOUR_GEMINI_API_KEY_HERE"  # Google Gemini API 키를 입력하세요
+  model: "gemini-2.5-flash-lite"
+
+loan:
+  # 대출 관련 기본 설정
+  max_loan_amount: 1000000000  # 최대 대출 한도 (10억원)
+  min_age: 19
+  max_age: 65
+  min_income: 12000000  # 최소 연소득 (1200만원)
+  max_dti: 40  # 최대 DTI 비율 (%)
+  
+  # 금리 관련 설정
+  base_rate: 3.5  # 기준금리 (%)
+  default_term: 120  # 기본 상환기간 (개월)
+
+scoring:
+  # 신용점수 가중치
+  credit_score_weight: 30
+  income_weight: 25
+  loan_amount_weight: 25
+  special_conditions_weight: 20
+  
+  # 최소 매칭 점수
+  min_score_threshold: 40
+
+system:
+  debug: true
+  port: 5000
+  host: "0.0.0.0"

@@ -1,0 +1,222 @@
+{
+  "scoring_criteria": [
+    {
+      "id": "CREDIT_SCORE_001",
+      "category": "신용점수",
+      "title": "신용점수 구간별 평가",
+      "description": "신용점수에 따른 등급 분류 및 가점 부여",
+      "scoring_rules": [
+        {"range": "900-1000", "grade": "1등급", "score": 100, "description": "최우수 신용"},
+        {"range": "850-899", "grade": "2등급", "score": 95, "description": "우수 신용"},
+        {"range": "800-849", "grade": "3등급", "score": 90, "description": "양호 신용"},
+        {"range": "750-799", "grade": "4등급", "score": 80, "description": "보통 신용"},
+        {"range": "700-749", "grade": "5등급", "score": 70, "description": "주의 신용"},
+        {"range": "650-699", "grade": "6등급", "score": 60, "description": "경계 신용"},
+        {"range": "600-649", "grade": "7등급", "score": 50, "description": "위험 신용"},
+        {"range": "0-599", "grade": "8등급", "score": 30, "description": "고위험 신용"}
+      ]
+    },
+    {
+      "id": "INCOME_001",
+      "category": "소득안정성",
+      "title": "소득 수준별 평가",
+      "description": "연소득 수준에 따른 상환능력 평가",
+      "scoring_rules": [
+        {"range": "100000000+", "grade": "A", "score": 100, "description": "고소득"},
+        {"range": "70000000-99999999", "grade": "B+", "score": 90, "description": "상위소득"},
+        {"range": "50000000-69999999", "grade": "B", "score": 80, "description": "중상위소득"},
+        {"range": "35000000-49999999", "grade": "C+", "score": 70, "description": "중간소득"},
+        {"range": "25000000-34999999", "grade": "C", "score": 60, "description": "중하위소득"},
+        {"range": "20000000-24999999", "grade": "D", "score": 50, "description": "저소득"},
+        {"range": "0-19999999", "grade": "E", "score": 30, "description": "최저소득"}
+      ]
+    },
+    {
+      "id": "EMPLOY_001", 
+      "category": "고용안정성",
+      "title": "직업 유형별 평가",
+      "description": "직업의 안정성에 따른 평가",
+      "scoring_rules": [
+        {"type": "공무원", "grade": "A+", "score": 100, "description": "최고 안정성"},
+        {"type": "교사", "grade": "A", "score": 95, "description": "높은 안정성"},
+        {"type": "공기업", "grade": "A-", "score": 90, "description": "우수 안정성"},
+        {"type": "대기업", "grade": "B+", "score": 85, "description": "양호 안정성"},
+        {"type": "중견기업", "grade": "B", "score": 75, "description": "보통 안정성"},
+        {"type": "중소기업", "grade": "C+", "score": 65, "description": "중간 안정성"},
+        {"type": "자영업", "grade": "C", "score": 55, "description": "낮은 안정성"},
+        {"type": "프리랜서", "grade": "D", "score": 45, "description": "불안정"}
+      ]
+    },
+    {
+      "id": "TENURE_001",
+      "category": "재직기간",
+      "title": "재직기간별 평가",
+      "description": "현 직장 재직기간에 따른 안정성 평가",
+      "scoring_rules": [
+        {"range": "60+", "grade": "A", "score": 100, "description": "5년 이상"},
+        {"range": "36-59", "grade": "B+", "score": 90, "description": "3-5년"},
+        {"range": "24-35", "grade": "B", "score": 80, "description": "2-3년"},
+        {"range": "12-23", "grade": "C+", "score": 70, "description": "1-2년"},
+        {"range": "6-11", "grade": "C", "score": 60, "description": "6개월-1년"},
+        {"range": "3-5", "grade": "D", "score": 40, "description": "3-6개월"},
+        {"range": "0-2", "grade": "E", "score": 20, "description": "3개월 미만"}
+      ]
+    },
+    {
+      "id": "AGE_001",
+      "category": "연령대",
+      "title": "연령별 리스크 평가",
+      "description": "연령에 따른 상환능력 및 리스크 평가",
+      "scoring_rules": [
+        {"range": "30-45", "grade": "A", "score": 100, "description": "황금기"},
+        {"range": "25-29", "grade": "B+", "score": 90, "description": "성장기"},
+        {"range": "46-55", "grade": "B", "score": 85, "description": "안정기"},
+        {"range": "22-24", "grade": "C+", "score": 75, "description": "초기경력"},
+        {"range": "56-60", "grade": "C", "score": 70, "description": "중후반기"},
+        {"range": "19-21", "grade": "D+", "score": 60, "description": "사회초년"},
+        {"range": "61-65", "grade": "D", "score": 50, "description": "은퇴예정"}
+      ]
+    },
+    {
+      "id": "DEBT_001",
+      "category": "기존부채",
+      "title": "기존 부채 수준 평가",
+      "description": "기존 부채 대비 소득 비율 평가",
+      "scoring_rules": [
+        {"range": "0-10", "grade": "A+", "score": 100, "description": "부채 거의 없음"},
+        {"range": "11-20", "grade": "A", "score": 90, "description": "낮은 부채"},
+        {"range": "21-30", "grade": "B+", "score": 80, "description": "적정 부채"},
+        {"range": "31-40", "grade": "B", "score": 70, "description": "보통 부채"},
+        {"range": "41-50", "grade": "C+", "score": 60, "description": "높은 부채"},
+        {"range": "51-60", "grade": "C", "score": 50, "description": "과다 부채"},
+        {"range": "61+", "grade": "D", "score": 30, "description": "위험 부채"}
+      ]
+    },
+    {
+      "id": "ASSET_001",
+      "category": "자산보유",
+      "title": "자산 규모별 평가",
+      "description": "보유 자산 규모에 따른 상환능력 평가",
+      "scoring_rules": [
+        {"range": "1000000000+", "grade": "A+", "score": 100, "description": "고액자산"},
+        {"range": "500000000-999999999", "grade": "A", "score": 90, "description": "상당자산"},
+        {"range": "300000000-499999999", "grade": "B+", "score": 80, "description": "양호자산"},
+        {"range": "100000000-299999999", "grade": "B", "score": 70, "description": "보통자산"},
+        {"range": "50000000-99999999", "grade": "C+", "score": 60, "description": "소액자산"},
+        {"range": "10000000-49999999", "grade": "C", "score": 50, "description": "최소자산"},
+        {"range": "0-9999999", "grade": "D", "score": 30, "description": "자산부족"}
+      ]
+    },
+    {
+      "id": "FAMILY_001",
+      "category": "가족구성",
+      "title": "가족 구성원별 평가",
+      "description": "부양가족 수에 따른 생활비 부담 평가",
+      "scoring_rules": [
+        {"range": "1", "grade": "A", "score": 100, "description": "단독가구"},
+        {"range": "2", "grade": "A-", "score": 90, "description": "2인가구"},
+        {"range": "3", "grade": "B+", "score": 80, "description": "3인가구"},
+        {"range": "4", "grade": "B", "score": 70, "description": "4인가구"},
+        {"range": "5", "grade": "C+", "score": 60, "description": "5인가구"},
+        {"range": "6+", "grade": "C", "score": 50, "description": "대가족"}
+      ]
+    },
+    {
+      "id": "REGION_001",
+      "category": "거주지역",
+      "title": "거주지역별 평가",
+      "description": "거주지역의 부동산 가치 안정성 평가",
+      "scoring_rules": [
+        {"type": "강남3구", "grade": "A+", "score": 100, "description": "최고급지"},
+        {"type": "서울시내", "grade": "A", "score": 90, "description": "서울시내"},
+        {"type": "수도권", "grade": "B+", "score": 80, "description": "수도권"},
+        {"type": "광역시", "grade": "B", "score": 70, "description": "광역시"},
+        {"type": "중소도시", "grade": "C+", "score": 60, "description": "중소도시"},
+        {"type": "농어촌", "grade": "C", "score": 50, "description": "농어촌"}
+      ]
+    },
+    {
+      "id": "EDUCATION_001",
+      "category": "학력",
+      "title": "학력별 평가",
+      "description": "학력 수준에 따른 소득잠재력 평가",
+      "scoring_rules": [
+        {"type": "박사", "grade": "A+", "score": 100, "description": "박사학위"},
+        {"type": "석사", "grade": "A", "score": 90, "description": "석사학위"},
+        {"type": "대졸", "grade": "B+", "score": 80, "description": "대학교졸업"},
+        {"type": "전문대졸", "grade": "B", "score": 70, "description": "전문대졸업"},
+        {"type": "고졸", "grade": "C+", "score": 60, "description": "고등학교졸업"},
+        {"type": "중졸이하", "grade": "C", "score": 50, "description": "중학교졸업이하"}
+      ]
+    },
+    {
+      "id": "BANK_001",
+      "category": "거래실적",
+      "title": "주거래은행 실적 평가",
+      "description": "주거래은행과의 거래기간 및 실적 평가",
+      "scoring_rules": [
+        {"range": "60+", "grade": "A", "score": 100, "description": "5년 이상 거래"},
+        {"range": "36-59", "grade": "B+", "score": 90, "description": "3-5년 거래"},
+        {"range": "24-35", "grade": "B", "score": 80, "description": "2-3년 거래"},
+        {"range": "12-23", "grade": "C+", "score": 70, "description": "1-2년 거래"},
+        {"range": "6-11", "grade": "C", "score": 60, "description": "6개월-1년 거래"},
+        {"range": "0-5", "grade": "D", "score": 40, "description": "신규고객"}
+      ]
+    },
+    {
+      "id": "SAVING_001",
+      "category": "저축실적",
+      "title": "저축 습관 평가", 
+      "description": "적금, 예금 등 저축 실적에 따른 평가",
+      "scoring_rules": [
+        {"range": "50000000+", "grade": "A+", "score": 100, "description": "고액저축"},
+        {"range": "30000000-49999999", "grade": "A", "score": 90, "description": "상당저축"},
+        {"range": "20000000-29999999", "grade": "B+", "score": 80, "description": "양호저축"},
+        {"range": "10000000-19999999", "grade": "B", "score": 70, "description": "보통저축"},
+        {"range": "5000000-9999999", "grade": "C+", "score": 60, "description": "소액저축"},
+        {"range": "1000000-4999999", "grade": "C", "score": 50, "description": "최소저축"},
+        {"range": "0-999999", "grade": "D", "score": 30, "description": "저축부족"}
+      ]
+    },
+    {
+      "id": "INSURANCE_001",
+      "category": "보험가입",
+      "title": "보험 가입 현황 평가",
+      "description": "생명보험, 손해보험 가입 실적 평가",
+      "scoring_rules": [
+        {"type": "종합보험", "grade": "A", "score": 100, "description": "생명+손해보험 모두"},
+        {"type": "생명보험", "grade": "B+", "score": 80, "description": "생명보험만"},
+        {"type": "손해보험", "grade": "B", "score": 70, "description": "손해보험만"},
+        {"type": "미가입", "grade": "D", "score": 40, "description": "보험 미가입"}
+      ]
+    },
+    {
+      "id": "CARD_001",
+      "category": "카드사용",
+      "title": "신용카드 사용 패턴 평가",
+      "description": "신용카드 사용실적 및 연체이력 평가",
+      "scoring_rules": [
+        {"type": "우수사용", "grade": "A", "score": 100, "description": "적정사용, 연체없음"},
+        {"type": "양호사용", "grade": "B+", "score": 80, "description": "보통사용, 연체없음"},
+        {"type": "보통사용", "grade": "B", "score": 70, "description": "사용실적 보통"},
+        {"type": "과다사용", "grade": "C", "score": 50, "description": "한도 대비 과다사용"},
+        {"type": "연체이력", "grade": "D", "score": 30, "description": "연체이력 존재"}
+      ]
+    },
+    {
+      "id": "PURPOSE_001",
+      "category": "대출목적",
+      "title": "대출 목적별 평가",
+      "description": "대출 사용 목적에 따른 리스크 평가",
+      "scoring_rules": [
+        {"type": "주택구입", "grade": "A+", "score": 100, "description": "주택구입자금"},
+        {"type": "전세자금", "grade": "A", "score": 90, "description": "전세보증금"},
+        {"type": "사업자금", "grade": "B+", "score": 80, "description": "사업운영자금"},
+        {"type": "학자금", "grade": "B", "score": 70, "description": "교육비"},
+        {"type": "생활자금", "grade": "C+", "score": 60, "description": "생활비보전"},
+        {"type": "부채정리", "grade": "C", "score": 50, "description": "기존부채정리"},
+        {"type": "투자자금", "grade": "D", "score": 40, "description": "투자목적"}
+      ]
+    }
+  ]
+}

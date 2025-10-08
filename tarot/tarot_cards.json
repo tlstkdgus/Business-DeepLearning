@@ -1,0 +1,230 @@
+{
+  "major_arcana": [
+    {
+      "number": 0,
+      "name": "The Fool",
+      "name_korean": "바보",
+      "description": "Young, carefree person walking near a cliff's edge, carrying a small bag and a white rose, symbolizing purity and new beginnings",
+      "upright_meaning": "New beginnings, interesting new adventure, potential for growth and unexpected opportunities, approaching life positively, childlike innocence",
+      "reversed_meaning": "Recklessness, distraction, ignorance, potential risks and lack of awareness, not taking relationships or opportunities seriously",
+      "image_url": "https://blog.kakaocdn.net/dna/c50n3V/btq0c1T9dKm/AAAAAAAAAAAAAAAAAAAAABzvwSui6gzrB3jw8ZTnId4Kr5VmGm9MkpsQjBvuOiYF/img.jpg",
+      "local_image": "card_image/00_The_Fool.jpg"
+    },
+    {
+      "number": 1,
+      "name": "The Magician",
+      "name_korean": "마법사",
+      "description": "Young man standing behind a table with four symbolic objects: wand, cup, sword, and pentacle, representing creative impulse with all possibilities and potential",
+      "upright_meaning": "Skills, strategy, ability to influence the material world, individual's power inspired by the divine, new opportunities in career, love, and personal growth",
+      "reversed_meaning": "Liar, fraudster, betrayer, lack of energy, immaturity, inability, potential deception and scattered energy",
+      "image_url": "https://blog.kakaocdn.net/dna/OGLzZ/btq0iBs7MnT/AAAAAAAAAAAAAAAAAAAAAOeuPXAF_l8-1boVcc5u7pjh-R0Ahvu7QdVBV0pq7yl_/img.jpg",
+      "local_image": "card_image/01_The_Magician.jpg"
+    },
+    {
+      "number": 2,
+      "name": "The High Priestess",
+      "name_korean": "여사제",
+      "description": "Woman in flowing blue dress with white crown featuring lunar symbols, sitting between two pillars marked B (Boaz - strength) and J (Jachin - stability), holding scroll with TORA",
+      "upright_meaning": "Secret knowledge and intuition, trust your intuition, potential secret love or unexpected happiness, hidden opportunities in career and personal life",
+      "reversed_meaning": "Deception warnings, hidden problems in relationships, caution about trusting others blindly",
+      "image_url": "",
+      "local_image": "card_image/02_The_High_Priestess.jpg"
+    },
+    {
+      "number": 3,
+      "name": "The Empress",
+      "name_korean": "여황제",
+      "description": "Woman on ornate throne with golden crown (12 stars), surrounded by wheat, water, and trees, representing fertility and abundance",
+      "upright_meaning": "Pregnancy/new ideas, happiness, luck, love intensification, leadership, financial improvement, creativity and nurturing",
+      "reversed_meaning": "Neglect, emotional barriers, unrecognized efforts, reckless spending warnings, creative blocks",
+      "image_url": "https://blog.kakaocdn.net/dna/ruFM3/btq0fk6vsO3/AAAAAAAAAAAAAAAAAAAAAI2IiY0ZIwnmSKMgRB7mFFHfyj6D_c0cvOIK-HXWpQQz/img.jpg",
+      "local_image": "card_image/03_The_Empress.jpg"
+    },
+    {
+      "number": 4,
+      "name": "The Emperor",
+      "name_korean": "황제",
+      "description": "Older man with white beard, golden crown, red clothing with armor, stone throne with ram's heads, representing authority and structure",
+      "upright_meaning": "Authority, leadership, stability, career advancement, financial responsibility, paternal protection",
+      "reversed_meaning": "Power abuse, controlling behavior, job dissatisfaction, financial instability, tyranny",
+      "image_url": "https://blog.kakaocdn.net/dna/bISGLW/btq0g1yYbGc/img.jpg",
+      "local_image": "card_image/04_The_Emperor.jpg"
+    },
+    {
+      "number": 5,
+      "name": "The Hierophant",
+      "name_korean": "교황",
+      "description": "Figure with elaborate crown, holding triple cross, two apprentices before him, representing tradition and spiritual guidance",
+      "upright_meaning": "Tradition, spiritual guidance, conservative approaches, career advancement, conformity, religious beliefs",
+      "reversed_meaning": "Spiritual neglect, relationship stagnation, need for adaptation, rebellion against tradition",
+      "image_url": "https://blog.kakaocdn.net/dna/IsE9k/btq0dnW3IXM/AAAAAAAAAAAAAAAAAAAAAG-ua2bgD4ng2hGqZMk2xcISIwDEzHDB2yEKBAP_m-Sv/img.jpg",
+      "local_image": "card_image/05_The_Hierophant.jpg"
+    },
+    {
+      "number": 6,
+      "name": "The Lovers",
+      "name_korean": "연인",
+      "description": "Two people facing each other, woman under apple tree with snake, man before tree with 12 flames, angel above representing unity and choice",
+      "upright_meaning": "Unity, passion, harmony, important choices, growth opportunities, love relationships, partnerships",
+      "reversed_meaning": "Emotional instability, communication breakdown, betrayal warnings, disharmony, bad choices",
+      "image_url": "https://blog.kakaocdn.net/dna/bBOBWH/btq0c2eswxl/AAAAAAAAAAAAAAAAAAAAAJx2f8mRYNLXnbELmpLXlS59T2i6rWhiz8VLRfl4Z5t7/img.jpg",
+      "local_image": "card_image/06_The_Lovers.jpg"
+    },
+    {
+      "number": 7,
+      "name": "The Chariot",
+      "name_korean": "전차",
+      "description": "Charioteer standing above city, black and white sphinxes, canopy of stars, representing willpower and determination",
+      "upright_meaning": "Victory, strong willpower, perseverance rewards, high energy, determination, control, triumph over obstacles",
+      "reversed_meaning": "Lack of progress, diminished ambition, rash actions, need for patience, lack of direction",
+      "image_url": "https://blog.kakaocdn.net/dna/b8LwGv/btq0iWw7xXd/img.jpg",
+      "local_image": "card_image/07_The_Chariot.jpg"
+    },
+    {
+      "number": 8,
+      "name": "Strength",
+      "name_korean": "힘",
+      "description": "Woman calmly stroking lion, infinite symbol above head, control through compassion rather than force",
+      "upright_meaning": "Courage, confidence, moral victory, leadership qualities, overcoming obstacles, inner strength, compassion",
+      "reversed_meaning": "Self-doubt, relationship challenges, need for confidence building, weakness, lack of courage",
+      "image_url": "https://blog.kakaocdn.net/dna/c7DGw6/btq0mxQRBfs/AAAAAAAAAAAAAAAAAAAAAP82NVYlq8_Ua3ton6M94FsQd07hkXTG2ejST_0DlAjD/img.jpg",
+      "local_image": "card_image/08_Strength.jpg"
+    },
+    {
+      "number": 9,
+      "name": "The Hermit",
+      "name_korean": "은둔자",
+      "description": "Lone figure on mountain holding lantern and staff, symbolizing wisdom and solitude, inner guidance",
+      "upright_meaning": "Self-reflection, personal journey, meditation, seeking deeper knowledge, inner wisdom, spiritual guidance",
+      "reversed_meaning": "Excessive isolation, loneliness, overly self-critical, relationship disconnection, avoiding self-reflection",
+      "image_url": "https://blog.kakaocdn.net/dna/d1oJXS/btq0g0Uj1kF/img.jpg",
+      "local_image": "card_image/09_The_Hermit.jpg"
+    },
+    {
+      "number": 10,
+      "name": "Wheel of Fortune",
+      "name_korean": "운명의 수레바퀴",
+      "description": "Wheel with TARO/YHWH letters, four evangelists in corners, sphinx, snake, Anubis, representing cycles and destiny",
+      "upright_meaning": "Positive changes coming, fate and chance, improvements in all life areas, good luck, destiny",
+      "reversed_meaning": "Chaotic energy, negative changes, relationship passion loss, financial risks, bad luck",
+      "image_url": "https://blog.kakaocdn.net/dna/bE8P2n/btq0jN2btVp/AAAAAAAAAAAAAAAAAAAAAAQPUpBsdza9hTcr59y0lbos3N52c8W02OD9i-ajFDhD/img.jpg",
+      "local_image": "card_image/10_Wheel_of_Fortune.jpg"
+    },
+    {
+      "number": 11,
+      "name": "Justice",
+      "name_korean": "정의",
+      "description": "Woman in red robe with crown, holding upward sword and golden scale, representing balance and fairness",
+      "upright_meaning": "Truth, balance, fair judgment, positive legal outcomes, karma, accountability, justice",
+      "reversed_meaning": "Dishonesty, avoiding responsibility, unethical behavior warnings, injustice, imbalance",
+      "image_url": "https://blog.kakaocdn.net/dna/cjgKUs/btq0qA05IoK/AAAAAAAAAAAAAAAAAAAAAKlSXWC-HrsbXrMqa_FH9-nev2gsi-HQUb8sAH4_OprV/img.jpg",
+      "local_image": "card_image/11_Justice.jpg"
+    },
+    {
+      "number": 12,
+      "name": "The Hanged Man",
+      "name_korean": "매달린 사람",
+      "description": "Man hanging upside down from tree, halo around head, hands behind back, one foot bound, representing sacrifice and perspective",
+      "upright_meaning": "Sacrifice, atonement, perspective change, waiting for right opportunity, suspension, letting go",
+      "reversed_meaning": "Repeating mistakes, stalled progress, unwillingness to resolve issues, impatience, resistance",
+      "image_url": "https://blog.kakaocdn.net/dna/c23cmx/btq0qA7RMHm/AAAAAAAAAAAAAAAAAAAAADK_hc0qXzhaib5eqHADvHUl86WsTc4Z5qZAh1nEcBl-/img.jpg",
+      "local_image": "card_image/12_The_Hanged_Man.jpg"
+    },
+    {
+      "number": 13,
+      "name": "Death",
+      "name_korean": "죽음",
+      "description": "Skeleton in armor on white horse, holding black flag, symbolizing transformation and endings leading to new beginnings",
+      "upright_meaning": "New beginnings, life cycle changes, spiritual transformation, endings, rebirth, metamorphosis",
+      "reversed_meaning": "Resistance to change, relationship challenges, feeling stuck, fear of change, stagnation",
+      "image_url": "https://blog.kakaocdn.net/dna/G1RkN/btq0iW57FhZ/AAAAAAAAAAAAAAAAAAAAAMTtCuhI98d_16qkRC0hjlP4Cn-Azu-PPP3xWGy_f-T-/img.jpg",
+      "local_image": "card_image/13_Death.jpg"
+    },
+    {
+      "number": 14,
+      "name": "Temperance",
+      "name_korean": "절제",
+      "description": "Winged angel pouring liquid between two cups, symbolizing balance and moderation, harmony between opposites",
+      "upright_meaning": "Patience, balance, self-control, harmony, career advancement, moderation, healing",
+      "reversed_meaning": "Imbalance, excess, destructive behaviors, relationship conflicts, lack of patience",
+      "image_url": "https://blog.kakaocdn.net/dna/zITY7/btq0oK4dRqh/AAAAAAAAAAAAAAAAAAAAAACLRpsy8kXq_QVpsRVQTvO05pjQKn3LQsg-ePcrF2YH/img.jpg",
+      "local_image": "card_image/14_Temperance.jpg"
+    },
+    {
+      "number": 15,
+      "name": "The Devil",
+      "name_korean": "악마",
+      "description": "Half-human, half-goat with bat wings, inverted pentagram, two bound human figures, representing temptation and bondage",
+      "upright_meaning": "Temptation, earthly pleasures, materialistic ambitions, addictive behaviors, bondage, materialism",
+      "reversed_meaning": "Freedom of consciousness, liberation from oppressive situations, breaking free from addiction",
+      "image_url": "https://blog.kakaocdn.net/dna/cQ5rtu/btq0n94dzkM/AAAAAAAAAAAAAAAAAAAAACyfj7WoaRhoDPRkQ7vWnN9fom18Z5E14wll7iVVunFV/img.jpg",
+      "local_image": "card_image/15_The_Devil.jpg"
+    },
+    {
+      "number": 16,
+      "name": "The Tower",
+      "name_korean": "탑",
+      "description": "Tower struck by lightning, people jumping from windows, 22 flames representing Major Arcana, sudden upheaval",
+      "upright_meaning": "Sudden unexpected change, mental shock, necessary transformation, awakening, revelation",
+      "reversed_meaning": "Impending crisis, inevitable transformation, relationship/career challenges, avoiding necessary change",
+      "image_url": "https://blog.kakaocdn.net/dna/vjTB3/btq0kDLNh5c/AAAAAAAAAAAAAAAAAAAAAGu9Sxlq7o-4o5OkEftR0CS45zv4ZbDX_p_wIJB3GZGg/img.jpg",
+      "local_image": "card_image/16_The_Tower.jpg"
+    },
+    {
+      "number": 17,
+      "name": "The Star",
+      "name_korean": "별",
+      "description": "Woman kneeling by pond, 7 small stars and 1 large star, pouring water from two pitchers, representing hope and inspiration",
+      "upright_meaning": "Creativity, hope, optimism, good fortune, artistic pursuits, inspiration, spiritual guidance",
+      "reversed_meaning": "Pessimistic outlook, professional unfulfillment, need to review budget, lack of faith",
+      "image_url": "https://blog.kakaocdn.net/dna/ZE9Et/btq0pxctK5c/AAAAAAAAAAAAAAAAAAAAAJk3pVYpvapuSGiAPfDPYciq7bQNt3e5mLDWu8wKwkEV/img.jpg",
+      "local_image": "card_image/17_The_Star.jpg"
+    },
+    {
+      "number": 18,
+      "name": "The Moon",
+      "name_korean": "달",
+      "description": "Two towers, two dogs, crayfish emerging from pond, symbolizing duality of dreams/reality, illusion and intuition",
+      "upright_meaning": "Hidden truths, illusion vs reality, potential mental health challenges, intuition, subconscious",
+      "reversed_meaning": "Pain from deception subsiding, emotional stability, career improvements, clarity",
+      "image_url": "https://blog.kakaocdn.net/dna/Xpj9z/btq0iWrwHaa/AAAAAAAAAAAAAAAAAAAAANFUO-GPvw8lJ25iYNhE0KY2xkk0s4zV1pXWOZy7Yxh7/img.jpg",
+      "local_image": "card_image/18_The_Moon.jpg"
+    },
+    {
+      "number": 19,
+      "name": "The Sun",
+      "name_korean": "태양",
+      "description": "Child on white horse with outstretched arms, yellow flower wreath, four sunflowers, representing joy and success",
+      "upright_meaning": "Hope, energy, optimism, self-confidence, success, vitality, joy, enlightenment",
+      "reversed_meaning": "Blocked confidence, challenges in love/career/finance, reduced motivation, temporary setbacks",
+      "image_url": "https://blog.kakaocdn.net/dna/d89ult/btq0pxwMFU9/AAAAAAAAAAAAAAAAAAAAAFJcwuEI_OecIajq0aUBJlqd9h03LpqvbdQbrk6a4nB0/img.jpg",
+      "local_image": "card_image/19_The_Sun.jpg"
+    },
+    {
+      "number": 20,
+      "name": "Judgement",
+      "name_korean": "심판",
+      "description": "Angel Gabriel awakening people from coffins, resurrection and final judgment imagery, representing rebirth and awakening",
+      "upright_meaning": "Rebirth, choice, life transitions, clear vision, leadership, spiritual awakening, judgment",
+      "reversed_meaning": "Indecisiveness, hesitation, missed opportunities, stagnation, self-doubt",
+      "image_url": "https://blog.kakaocdn.net/dna/mGmuc/btq0nO8h79s/AAAAAAAAAAAAAAAAAAAAAMEVFlrxfp2gMKobJGEVQr3p2n8Amj5I2Q7cLXusrNtK/img.jpg",
+      "local_image": "card_image/20_Judgement.jpg"
+    },
+    {
+      "number": 21,
+      "name": "The World",
+      "name_korean": "세계",
+      "description": "Woman floating between clouds, wrapped in cloth, holding white batons, green victory wreath, four corner symbols representing completion",
+      "upright_meaning": "Perfection, success, achievement, completion, imminent victory, fulfillment, cosmic consciousness",
+      "reversed_meaning": "Taking easy paths, relationship imbalances, self-imposed obstacles, incomplete goals",
+      "image_url": "https://blog.kakaocdn.net/dna/D0HFX/btq0tYhhW1v/AAAAAAAAAAAAAAAAAAAAAIc1lzryX-jJR77oQt2rkHxs5wJrmotRkh_sQY3bycx_/img.jpg",
+      "local_image": "card_image/21_The_World.jpg"
+    }
+  ],
+  "metadata": {
+    "total_cards": 22,
+    "source": "Major Arcana from Rider-Waite Tarot Deck",
+    "creation_date": "2025-09-25",
+    "description": "Complete Major Arcana tarot card descriptions with Korean translations, meanings, and symbolism"
+  }
+}

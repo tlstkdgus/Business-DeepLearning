@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 대출 심사 시스템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+        }
+        
+        .result-card {
+            border-left: 5px solid #28a745;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .approval-percentage {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .dti-display {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .dti-good { color: #28a745; }
+        .dti-warning { color: #ffc107; }
+        .dti-danger { color: #dc3545; }
+        
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        .chat-interface {
+            background: white;
+            border-radius: 15px;
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        
+        .user-message {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .ai-message {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        
+        .progress {
+            height: 25px;
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 10px;
+        }
+        
+        /* 마크다운 스타일링 */
+        .markdown-content {
+            line-height: 1.6;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .markdown-content h1 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .markdown-content h2 {
+            color: #0056b3;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .markdown-content h3 {
+            color: #495057;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .markdown-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .markdown-content strong {
+            color: #007bff;
+            font-weight: 600;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+        
+        .markdown-content li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .markdown-content blockquote {
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 15px 20px;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        
+        .markdown-content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+            font-size: 0.9em;
+        }
+        
+        .markdown-content .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        
+        .markdown-content .status-good {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .markdown-content .status-warning {
+            color: #ffc107;
+            font-weight: 600;
+        }
+        
+        .markdown-content .status-danger {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .markdown-content .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .markdown-content .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .markdown-content .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .markdown-content .danger {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* AI 메시지 전용 스타일 */
+        .ai-message.markdown-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- 헤더 -->
+        <div class="card">
+            <div class="card-header">
+                <h1><i class="fas fa-university"></i> AI 대출 심사 시스템</h1>
+                <p class="mb-0">인공지능 기반 대출 승인 가능성 분석 및 상품 추천</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 좌측: 사용자 정보 입력 폼 -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user"></i> 고객 정보 입력</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="loanForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="age" class="form-label">
+                                        <i class="fas fa-calendar-alt feature-icon"></i>나이
+                                    </label>
+                                    <input type="number" class="form-control" id="age" min="19" max="65" required placeholder="만 나이를 입력하세요">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="credit_score" class="form-label">
+                                        <i class="fas fa-star feature-icon"></i>신용점수
+                                    </label>
+                                    <input type="number" class="form-control" id="credit_score" min="300" max="1000" required placeholder="신용점수를 입력하세요">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="annual_income" class="form-label">
+                                    <i class="fas fa-won-sign feature-icon"></i>연소득 (원)
+                                </label>
+                                <input type="text" class="form-control" id="annual_income" required placeholder="연소득을 입력하세요 (예: 50,000,000)" data-type="currency">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="desired_amount" class="form-label">
+                                    <i class="fas fa-money-bill-wave feature-icon"></i>희망 대출금액 (원)
+                                </label>
+                                <input type="text" class="form-control" id="desired_amount" required placeholder="희망 대출금액을 입력하세요 (예: 30,000,000)" data-type="currency">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="monthly_debt" class="form-label">
+                                    <i class="fas fa-credit-card feature-icon"></i>기존 월 부채상환액 (원)
+                                </label>
+                                <input type="text" class="form-control" id="monthly_debt" placeholder="기존 대출 월 상환금 (없으면 0 또는 비워두세요)" data-type="currency">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="loan_purpose" class="form-label">
+                                    <i class="fas fa-target feature-icon"></i>대출 목적
+                                </label>
+                                <select class="form-select" id="loan_purpose">
+                                    <option value="생활자금">생활자금</option>
+                                    <option value="주택구입">주택구입</option>
+                                    <option value="전세자금">전세자금</option>
+                                    <option value="사업자금">사업자금</option>
+                                    <option value="학자금">학자금</option>
+                                    <option value="부채정리">부채정리</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 btn-lg">
+                                <i class="fas fa-search"></i> 대출 심사 받기
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 우측: 결과 표시 -->
+            <div class="col-lg-6">
+                <div id="results" style="display: none;">
+                    <!-- 승인 가능성 -->
+                    <div class="card result-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-line"></i> 대출 심사 결과</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h5>승인 가능성</h5>
+                                    <div id="approvalPercentage" class="approval-percentage">0%</div>
+                                    <div class="progress">
+                                        <div id="approvalProgress" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h5>DTI 비율</h5>
+                                    <div id="dtiDisplay" class="dti-display">0%</div>
+                                    <small class="text-muted">총부채원리금상환비율</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI 분석 결과 -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-robot"></i> AI 분석 결과</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="aiExplanation" class="chat-interface">
+                                <!-- AI 분석 내용이 여기에 표시됩니다 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 추천 상품 -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-gift"></i> 추천 대출 상품</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="recommendedProducts">
+                                <!-- 추천 상품이 여기에 표시됩니다 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 로딩 화면 -->
+                <div id="loading" style="display: none;">
+                    <div class="card">
+                        <div class="card-body loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <h4 class="mt-3">AI가 대출 심사를 진행 중입니다...</h4>
+                            <p class="text-muted">잠시만 기다려주세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 초기 안내 -->
+                <div id="welcome" class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-hand-point-left" style="font-size: 3rem; color: #007bff; margin-bottom: 20px;"></i>
+                        <h4>좌측 폼을 작성해주세요</h4>
+                        <p class="text-muted">
+                            개인정보를 입력하시면 AI가 대출 승인 가능성을 분석하고<br>
+                            맞춤형 상품을 추천해드립니다.
+                        </p>
+                        <div class="mt-4">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <small class="text-success"><i class="fas fa-shield-alt"></i> 안전한 암호화 처리</small>
+                                </div>
+                                <div class="col-12 mb-2">
+                                    <small class="text-info"><i class="fas fa-clock"></i> 실시간 심사</small>
+                                </div>
+                                <div class="col-12">
+                                    <small class="text-warning"><i class="fas fa-robot"></i> AI 기반 분석</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loanForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // 로딩 화면 표시
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            
+            // 폼 데이터 수집 (콤마 제거 후 숫자 변환)
+            const formData = {
+                age: parseInt(document.getElementById('age').value),
+                annual_income: getNumericValue('annual_income'),
+                credit_score: parseInt(document.getElementById('credit_score').value),
+                desired_amount: getNumericValue('desired_amount'),
+                monthly_debt: getNumericValue('monthly_debt'),
+                loan_purpose: document.getElementById('loan_purpose').value
+            };
+            
+            try {
+                const response = await fetch('/api/loan-check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayResults(result.data);
+                } else {
+                    alert('오류가 발생했습니다: ' + result.error);
+                }
+            } catch (error) {
+                alert('서버 통신 오류가 발생했습니다.');
+                console.error('Error:', error);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        });
+        
+        function displayResults(data) {
+            // 승인 가능성 표시
+            const percentage = data.approval_percentage;
+            document.getElementById('approvalPercentage').textContent = percentage + '%';
+            document.getElementById('approvalProgress').style.width = percentage + '%';
+            
+            // DTI 표시
+            const dti = data.dti;
+            const dtiElement = document.getElementById('dtiDisplay');
+            dtiElement.textContent = dti + '%';
+            
+            // DTI 색상 설정
+            dtiElement.className = 'dti-display ';
+            if (dti <= 30) {
+                dtiElement.className += 'dti-good';
+            } else if (dti <= 40) {
+                dtiElement.className += 'dti-warning';
+            } else {
+                dtiElement.className += 'dti-danger';
+            }
+            
+            // AI 분석 결과 표시 (마크다운 적용)
+            const aiExplanationElement = document.getElementById('aiExplanation');
+            const markdownContent = processMarkdownContent(data.ai_explanation);
+            aiExplanationElement.innerHTML = 
+                '<div class="ai-message message markdown-content">' + 
+                markdownContent + 
+                '</div>';
+            
+            // 추천 상품 표시
+            displayRecommendedProducts(data.recommended_products);
+            
+            // 결과 영역 표시
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function displayRecommendedProducts(products) {
+            const container = document.getElementById('recommendedProducts');
+            
+            console.log('추천 상품 데이터:', products); // 디버그 로그
+            
+            if (!products || products.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        현재 조건에 맞는 추천 상품이 없습니다. 
+                        <br><small>조건을 조정하시거나 상담을 통해 더 자세한 정보를 확인해보세요.</small>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            products.forEach((product, index) => {
+                const minRate = product.interest_rate_min || 0;
+                const maxRate = product.interest_rate_max || 0;
+                const maxAmount = product.max_amount || 0;
+                const minAmount = product.min_amount || 0;
+                const matchScore = product.match_score || 0;
+                
+                // 매칭 점수에 따른 배지 색상
+                let badgeColor = 'bg-secondary';
+                if (matchScore >= 80) badgeColor = 'bg-success';
+                else if (matchScore >= 60) badgeColor = 'bg-primary';
+                else if (matchScore >= 40) badgeColor = 'bg-warning';
+                
+                html += `
+                    <div class="product-card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center mb-2">
+                                    <h5 class="text-primary mb-0 me-2">${product.name}</h5>
+                                    <span class="badge ${badgeColor}">매칭도 ${matchScore}%</span>
+                                </div>
+                                <p class="text-muted mb-2">${product.description || '상품 설명'}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <small><strong><i class="fas fa-percentage text-primary"></i> 금리:</strong> ${minRate}% ~ ${maxRate}%</small>
+                            </div>
+                            <div class="col-md-6">
+                                <small><strong><i class="fas fa-won-sign text-success"></i> 한도:</strong> ${(minAmount/10000).toFixed(0)}만원 ~ ${(maxAmount/10000).toFixed(0)}만원</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <small><strong><i class="fas fa-star text-warning"></i> 추천 이유:</strong> ${product.match_reason || '조건 부합'}</small>
+                        </div>
+                        
+                        ${product.features ? `
+                            <div class="mt-2">
+                                ${product.features.map(feature => 
+                                    `<span class="badge bg-light text-dark me-1 mb-1"><i class="fas fa-check text-success"></i> ${feature}</span>`
+                                ).join('')}
+                            </div>
+                        ` : ''}
+                        
+                        ${product.all_reasons && product.all_reasons.length > 1 ? `
+                            <div class="mt-2">
+                                <small class="text-muted">
+                                    <strong>추가 혜택:</strong> ${product.all_reasons.slice(1).join(', ')}
+                                </small>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // 마크다운 콘텐츠 처리 함수
+        function processMarkdownContent(content) {
+            if (typeof marked !== 'undefined') {
+                // marked 라이브러리 사용
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true
+                });
+                return marked.parse(content);
+            } else {
+                // 기본 마크다운 처리
+                let html = content
+                    // 헤딩 처리
+                    .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+                    .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+                    
+                    // 강조 처리
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    
+                    // 이모지 스타일링
+                    .replace(/✅/g, '<span class="emoji status-good">✅</span>')
+                    .replace(/🟡/g, '<span class="emoji status-warning">🟡</span>')
+                    .replace(/⚠️/g, '<span class="emoji status-warning">⚠️</span>')
+                    .replace(/❌/g, '<span class="emoji status-danger">❌</span>')
+                    .replace(/✨/g, '<span class="emoji">✨</span>')
+                    .replace(/🎯/g, '<span class="emoji">🎯</span>')
+                    .replace(/�/g, '<span class="emoji">�</span>')
+                    .replace(/�/g, '<span class="emoji">�</span>')
+                    .replace(/📈/g, '<span class="emoji">📈</span>')
+                    
+                    // 리스트 처리
+                    .replace(/^- (.*?)$/gm, '<li>$1</li>')
+                    .replace(/^\d+\. (.*?)$/gm, '<li>$1</li>')
+                    
+                    // 줄바꿈 처리
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/\n/g, '<br>');
+                
+                // 연속된 li 태그를 ul로 감싸기
+                html = html.replace(/(<li>.*?<\/li>)(\s*<li>.*?<\/li>)*/gs, function(match) {
+                    return '<ul>' + match + '</ul>';
+                });
+                
+                // p 태그로 감싸기
+                if (!html.startsWith('<h') && !html.startsWith('<ul') && !html.startsWith('<ol')) {
+                    html = '<p>' + html + '</p>';
+                }
+                
+                return html;
+            }
+        }
+        
+        // 개선된 숫자 입력 포맷팅
+        function setupCurrencyInput(input) {
+            // 숫자만 허용하고 실시간 콤마 포맷팅
+            input.addEventListener('input', function(e) {
+                let value = this.value.replace(/[^0-9]/g, ''); // 숫자만 허용
+                if (value) {
+                    // 천단위 콤마 추가
+                    this.value = parseInt(value).toLocaleString('ko-KR');
+                } else {
+                    this.value = '';
+                }
+            });
+            
+            // 붙여넣기 시에도 처리
+            input.addEventListener('paste', function(e) {
+                setTimeout(() => {
+                    let value = this.value.replace(/[^0-9]/g, '');
+                    if (value) {
+                        this.value = parseInt(value).toLocaleString('ko-KR');
+                    }
+                }, 10);
+            });
+            
+            // 포커스 시 콤마 제거하지 않고 끝으로 커서 이동
+            input.addEventListener('focus', function() {
+                setTimeout(() => {
+                    this.setSelectionRange(this.value.length, this.value.length);
+                }, 10);
+            });
+        }
+        
+        // 숫자 값 추출 함수
+        function getNumericValue(elementId) {
+            const element = document.getElementById(elementId);
+            if (!element || !element.value) return 0;
+            return parseInt(element.value.replace(/[^0-9]/g, '')) || 0;
+        }
+        
+        // 통화 입력 필드 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            setupCurrencyInput(document.getElementById('annual_income'));
+            setupCurrencyInput(document.getElementById('desired_amount'));
+            setupCurrencyInput(document.getElementById('monthly_debt'));
+        });
+    </script>
+</body>
+</html>

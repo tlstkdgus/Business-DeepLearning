@@ -1,0 +1,244 @@
+{
+  "regulations": [
+    {
+      "id": "DTI_001",
+      "type": "DTI",
+      "title": "일반 DTI 규정",
+      "content": "총부채원리금상환비율(DTI)은 연소득 대비 40% 이하로 제한됩니다.",
+      "threshold": 40,
+      "category": "기본규정"
+    },
+    {
+      "id": "DTI_002", 
+      "type": "DTI",
+      "title": "투기지역 DTI 규정",
+      "content": "투기지역에서는 DTI 30% 이하로 강화 적용됩니다.",
+      "threshold": 30,
+      "category": "투기지역"
+    },
+    {
+      "id": "DTI_003",
+      "type": "DTI", 
+      "title": "조정대상지역 DTI 규정",
+      "content": "조정대상지역에서는 DTI 35% 이하로 적용됩니다.",
+      "threshold": 35,
+      "category": "조정대상지역"
+    },
+    {
+      "id": "DSR_001",
+      "type": "DSR",
+      "title": "일반 DSR 규정", 
+      "content": "총부채원리금상환비율(DSR)은 연소득 대비 40% 이하로 제한됩니다.",
+      "threshold": 40,
+      "category": "기본규정"
+    },
+    {
+      "id": "DSR_002",
+      "type": "DSR",
+      "title": "고소득자 DSR 규정",
+      "content": "연소득 1억원 이상 고소득자는 DSR 60% 적용 가능합니다.",
+      "threshold": 60,
+      "category": "고소득자"
+    },
+    {
+      "id": "LTV_001",
+      "type": "LTV",
+      "title": "일반 LTV 규정",
+      "content": "주택담보대출비율(LTV)은 담보가치의 70% 이하로 제한됩니다.",
+      "threshold": 70,
+      "category": "일반주택"
+    },
+    {
+      "id": "LTV_002",
+      "type": "LTV", 
+      "title": "투기지역 LTV 규정",
+      "content": "투기지역에서는 LTV 50% 이하로 강화 적용됩니다.",
+      "threshold": 50,
+      "category": "투기지역"
+    },
+    {
+      "id": "LTV_003",
+      "type": "LTV",
+      "title": "조정대상지역 LTV 규정", 
+      "content": "조정대상지역에서는 LTV 60% 이하로 적용됩니다.",
+      "threshold": 60,
+      "category": "조정대상지역"
+    },
+    {
+      "id": "AGE_001",
+      "type": "연령제한",
+      "title": "최소 연령 제한",
+      "content": "대출 신청 시 만 19세 이상이어야 합니다.",
+      "threshold": 19,
+      "category": "연령"
+    },
+    {
+      "id": "AGE_002",
+      "type": "연령제한", 
+      "title": "최대 연령 제한",
+      "content": "대출 만기 시 만 65세 이하여야 합니다.",
+      "threshold": 65,
+      "category": "연령"
+    },
+    {
+      "id": "INCOME_001",
+      "type": "소득증명",
+      "title": "최소 소득 요건",
+      "content": "연소득 2천만원 이상 소득증명이 필요합니다.",
+      "threshold": 20000000,
+      "category": "소득"
+    },
+    {
+      "id": "CREDIT_001",
+      "type": "신용점수",
+      "title": "최소 신용점수",
+      "content": "신용점수 600점 이상이어야 대출 신청이 가능합니다.",
+      "threshold": 600,
+      "category": "신용"
+    },
+    {
+      "id": "CREDIT_002",
+      "type": "신용점수",
+      "title": "우대 신용점수",
+      "content": "신용점수 800점 이상 시 우대금리 적용됩니다.",
+      "threshold": 800,
+      "category": "신용"
+    },
+    {
+      "id": "EMPLOY_001",
+      "type": "재직기간",
+      "title": "최소 재직기간",
+      "content": "현 직장 재직기간 6개월 이상이어야 합니다.",
+      "threshold": 6,
+      "category": "재직"
+    },
+    {
+      "id": "EMPLOY_002",
+      "type": "재직기간",
+      "title": "우대 재직기간",
+      "content": "현 직장 재직기간 3년 이상 시 우대조건 적용됩니다.",
+      "threshold": 36,
+      "category": "재직"
+    },
+    {
+      "id": "AMOUNT_001",
+      "type": "대출한도",
+      "title": "최소 대출금액",
+      "content": "신용대출 최소금액은 500만원입니다.",
+      "threshold": 5000000,
+      "category": "한도"
+    },
+    {
+      "id": "AMOUNT_002",
+      "type": "대출한도",
+      "title": "최대 대출금액",
+      "content": "신용대출 최대금액은 1억원입니다.",
+      "threshold": 100000000,
+      "category": "한도"
+    },
+    {
+      "id": "COLLATERAL_001",
+      "type": "담보인정",
+      "title": "부동산 담보",
+      "content": "아파트, 단독주택, 연립주택 담보로 인정됩니다.",
+      "threshold": 0,
+      "category": "담보"
+    },
+    {
+      "id": "COLLATERAL_002",
+      "type": "담보인정",
+      "title": "상업용 부동산",
+      "content": "상가, 오피스텔도 담보로 인정되나 할인율이 적용됩니다.",
+      "threshold": 0,
+      "category": "담보"
+    },
+    {
+      "id": "REPAY_001",
+      "type": "상환방식",
+      "title": "원리금균등상환",
+      "content": "원리금균등상환 방식 시 안정적인 상환계획으로 인정됩니다.",
+      "threshold": 0,
+      "category": "상환"
+    },
+    {
+      "id": "REPAY_002",
+      "type": "상환방식", 
+      "title": "원금균등상환",
+      "content": "원금균등상환 방식 시 초기 부담이 크나 총 이자 부담이 적습니다.",
+      "threshold": 0,
+      "category": "상환"
+    },
+    {
+      "id": "TERM_001",
+      "type": "대출기간",
+      "title": "최소 대출기간",
+      "content": "대출기간은 최소 1년 이상이어야 합니다.",
+      "threshold": 12,
+      "category": "기간"
+    },
+    {
+      "id": "TERM_002",
+      "type": "대출기간",
+      "title": "최대 대출기간",
+      "content": "신용대출 최대기간은 7년입니다.",
+      "threshold": 84,
+      "category": "기간"
+    },
+    {
+      "id": "TERM_003",
+      "type": "대출기간",
+      "title": "담보대출 최대기간",
+      "content": "담보대출 최대기간은 30년입니다.",
+      "threshold": 360,
+      "category": "기간"
+    },
+    {
+      "id": "DOC_001",
+      "type": "서류요건",
+      "title": "필수 서류",
+      "content": "신분증, 소득증명서, 재직증명서가 필수 제출 서류입니다.",
+      "threshold": 0,
+      "category": "서류"
+    },
+    {
+      "id": "DOC_002",
+      "type": "서류요건",
+      "title": "추가 서류",
+      "content": "담보대출 시 등기부등본, 감정평가서가 추가로 필요합니다.",
+      "threshold": 0,
+      "category": "서류"
+    },
+    {
+      "id": "GUARANTOR_001",
+      "type": "보증인",
+      "title": "보증인 요건",
+      "content": "신용점수 700점 미만 시 보증인이 필요할 수 있습니다.",
+      "threshold": 700,
+      "category": "보증"
+    },
+    {
+      "id": "INSURANCE_001",
+      "type": "보험가입",
+      "title": "단체신용보험",
+      "content": "대출 시 단체신용보험 가입이 필수입니다.",
+      "threshold": 0,
+      "category": "보험"
+    },
+    {
+      "id": "EARLY_001",
+      "type": "중도상환",
+      "title": "중도상환 수수료",
+      "content": "대출 후 2년 이내 중도상환 시 수수료가 부과됩니다.",
+      "threshold": 24,
+      "category": "중도상환"
+    },
+    {
+      "id": "SPECIAL_001",
+      "type": "특례조건",
+      "title": "신혼부부 특례",
+      "content": "신혼부부는 DTI, LTV 특례 조건이 적용될 수 있습니다.",
+      "threshold": 0,
+      "category": "특례"
+    }
+  ]
+}
